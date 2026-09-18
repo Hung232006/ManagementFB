@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="vi" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}PITCH247 - Nền Tảng Đặt Sân Bóng Thông Minh{% endblock %}</title>
+    
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome 6.5 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Hệ màu Chuyên nghiệp Mới: Cyan & Slate */
+            --brand-cyan: #06b6d4;
+            --brand-emerald: #10b981;
+            --brand-gradient: linear-gradient(135deg, #06b6d4 0%, #059669 100%);
+            --brand-glow: rgba(6, 182, 212, 0.25);
+            
+            --bg-dark: #0b0f19;
+            --surface-card: #151c2c;
+            --surface-border: rgba(255, 255, 255, 0.08);
+            --text-muted: #94a3b8;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-dark);
+            color: #f8fafc;
+            /* Mesh Gradient chuyển màu dịu mắt */
+            background-image: 
+                radial-gradient(at 10% 10%, rgba(6, 182, 212, 0.08) 0px, transparent 40%),
+                radial-gradient(at 90% 90%, rgba(16, 185, 129, 0.06) 0px, transparent 40%);
+            background-attachment: fixed;
+        }
+
+        /* Top Live Bar - Tone Xanh Cyan Tinh Tế */
+        .top-live-bar {
+            background: rgba(6, 182, 212, 0.08);
+            border-bottom: 1px solid rgba(6, 182, 212, 0.15);
+            font-size: 0.8rem;
+            color: #67e8f9;
+        }
+
+        /* Floating Navbar Glassmorphic */
+        .navbar-floating-container {
+            padding-top: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 1030;
+        }
+
+        .navbar-pro {
+            background: rgba(15, 23, 42, 0.8) !important;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--surface-border);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        }
+
+        .brand-logo {
+            font-weight: 800;
+            font-size: 1.3rem;
+            letter-spacing: -0.5px;
+            color: #ffffff;
+        }
+        .brand-logo .accent-text {
+            background: var(--brand-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Nav Links Modern */
+        .nav-link-custom {
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.88rem;
+            padding: 8px 16px !important;
+            border-radius: 10px;
+            transition: all 0.2s ease;
+        }
+
+        .nav-link-custom:hover {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-link-custom.active {
+            color: var(--brand-cyan);
+            background: rgba(6, 182, 212, 0.1);
+        }
+
+        /* Button Gradient Chuyên Nghiệp */
+        .btn-brand {
+            background: var(--brand-gradient);
+            color: #ffffff;
+            font-weight: 600;
+            border-radius: 10px;
+            padding: 9px 20px;
+            border: none;
+            box-shadow: 0 4px 15px var(--brand-glow);
+            transition: all 0.3s ease;
+        }
+
+        .btn-brand:hover {
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(6, 182, 212, 0.4);
+        }
+
+        /* Footer Tối Giản Pro */
+        .footer-pro {
+            background: #060911;
+            border-top: 1px solid var(--surface-border);
+            margin-top: 90px;
+        }
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <!-- Live Status Top Bar -->
+    <div class="top-live-bar py-1.5">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center gap-2">
+                <span class="badge bg-info rounded-circle p-1"><span class="visually-hidden">Live</span></span>
+                <span>Hệ thống cập nhật lịch sân trống theo thời gian thực</span>
+            </div>
+            <div class="d-none d-md-block small">
+                <i class="fa-solid fa-headset me-1"></i> Hotline hỗ trợ: <strong class="text-white">0987.654.321</strong>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Header / Navbar -->
+    <div class="navbar-floating-container">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark navbar-pro px-3 py-2">
+                <a class="navbar-brand brand-logo d-flex align-items-center gap-2" href="/">
+                    <div class="p-2 rounded-3 text-info d-flex align-items-center justify-content-center" style="width: 36px; height: 36px; background: rgba(6,182,212,0.12);">
+                        <i class="fa-solid fa-futbol fs-6 text-info"></i>
+                    </div>
+                    <span>PITCH<span class="accent-text">247</span></span>
+                </a>
+
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto gap-1">
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-custom active" href="/"><i class="fa-solid fa-compass me-1"></i> Trang chủ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-custom" href="#danh-sach-san"><i class="fa-solid fa-futbol me-1"></i> Danh sách sân</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-custom" href="/bookings"><i class="fa-regular fa-calendar-check me-1"></i> Tra cứu đơn</a>
+                        </li>
+                    </ul>
+
+                    <div class="d-flex align-items-center gap-2 mt-3 mt-lg-0">
+                        <a href="#danh-sach-san" class="btn btn-brand btn-sm"><i class="fa-solid fa-bolt me-1"></i> Đặt Sân Ngay</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Nội dung chính -->
+    <main class="flex-grow-1">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer Pro -->
+    <footer class="footer-pro text-white-50 pt-5 pb-4">
+        <div class="container">
+            <div class="row g-4 pb-4 border-bottom border-secondary border-opacity-10">
+                <div class="col-lg-5">
+                    <a class="brand-logo text-white text-decoration-none d-inline-block mb-3" href="/">
+                        PITCH<span class="accent-text">247</span>
+                    </a>
+                    <p class="small text-muted pe-lg-5">Nền tảng tìm kiếm và đặt lịch sân bóng đá trực tuyến nhanh chóng. Giúp bạn chọn sân phù hợp, kiểm tra lịch trống và đặt sân chỉ trong vài thao tác.</p>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <h6 class="text-white fw-bold mb-3 small text-uppercase" style="letter-spacing: 1px;">Dịch Vụ</h6>
+                    <ul class="list-unstyled small d-flex flex-column gap-2 text-muted">
+                        <li><a href="#danh-sach-san" class="text-muted text-decoration-none">Sân bóng 5 người</a></li>
+                        <li><a href="#danh-sach-san" class="text-muted text-decoration-none">Sân bóng 7 người</a></li>
+                        <li><a href="/bookings" class="text-muted text-decoration-none">Tra cứu lịch đặt</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-6">
+                    <h6 class="text-white fw-bold mb-3 small text-uppercase" style="letter-spacing: 1px;">Liên Hệ Hỗ Trợ</h6>
+                    <p class="small text-muted mb-1"><i class="fa-solid fa-phone me-2 text-info"></i>0987.654.321</p>
+                    <p class="small text-muted mb-1"><i class="fa-solid fa-envelope me-2 text-info"></i>hotro@pitch247.vn</p>
+                    <p class="small text-muted"><i class="fa-solid fa-location-dot me-2 text-info"></i>Hà Nội, Việt Nam</p>
+                </div>
+            </div>
+            <div class="text-center small pt-4 text-muted">
+                <p class="mb-0">&copy; 2026 PITCH247. Designed for Modern Sports.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS Files -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+    </script>
+</body>
+</html>
