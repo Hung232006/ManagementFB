@@ -1,219 +1,291 @@
 <!DOCTYPE html>
-<html lang="vi" data-bs-theme="dark">
+<html lang="vi" data-bs-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}PITCH247 - Nền Tảng Đặt Sân Bóng Thông Minh{% endblock %}</title>
-    
+    <title>{% block title %}PITCH247 - Nền Tảng Đặt Sân Thể Thao Thế Hệ Mới{% endblock %}</title>
+
     <!-- Bootstrap 5.3 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- FontAwesome 6.5 Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Google Fonts: Plus Jakarta Sans -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Space Grotesk & Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
         :root {
-            /* Hệ màu Chuyên nghiệp Mới: Cyan & Slate */
-            --brand-cyan: #06b6d4;
-            --brand-emerald: #10b981;
-            --brand-gradient: linear-gradient(135deg, #06b6d4 0%, #059669 100%);
-            --brand-glow: rgba(6, 182, 212, 0.25);
+            /* Hệ màu Mới: Light Neo-Cyber */
+            --primary-lime: #10b981; /* Chuyển sang Emerald Lime/Green đậm hơn để nổi bật trên nền sáng */
+            --primary-lime-glow: rgba(16, 185, 129, 0.2);
+            --secondary-violet: #4f46e5;
             
-            --bg-dark: #0b0f19;
-            --surface-card: #151c2c;
-            --surface-border: rgba(255, 255, 255, 0.08);
-            --text-muted: #94a3b8;
+            --bg-main: #f8fafc;
+            --surface-side: #ffffff;
+            --surface-card: #ffffff;
+            --border-color: #e2e8f0;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
         }
 
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-dark);
-            color: #f8fafc;
-            /* Mesh Gradient chuyển màu dịu mắt */
-            background-image: 
-                radial-gradient(at 10% 10%, rgba(6, 182, 212, 0.08) 0px, transparent 40%),
-                radial-gradient(at 90% 90%, rgba(16, 185, 129, 0.06) 0px, transparent 40%);
-            background-attachment: fixed;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            overflow-x: hidden;
         }
 
-        /* Top Live Bar - Tone Xanh Cyan Tinh Tế */
-        .top-live-bar {
-            background: rgba(6, 182, 212, 0.08);
-            border-bottom: 1px solid rgba(6, 182, 212, 0.15);
-            font-size: 0.8rem;
-            color: #67e8f9;
+        h1, h2, h3, h4, h5, h6, .brand-font {
+            font-family: 'Space Grotesk', sans-serif;
         }
 
-        /* Floating Navbar Glassmorphic */
-        .navbar-floating-container {
-            padding-top: 15px;
+        /* Layout Bố Cục Sidebar Bên Trái */
+        .app-container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .app-sidebar {
+            width: 260px;
+            background: var(--surface-side);
+            border-right: 1px solid var(--border-color);
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1040;
+            padding: 1.5rem 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.02);
+        }
+
+        .app-main-content {
+            margin-left: 260px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+        }
+
+        /* Top Bar Tìm Kiếm & Trạng Thái */
+        .top-header {
+            height: 70px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
             position: sticky;
             top: 0;
             z-index: 1030;
+            padding: 0 2rem;
         }
 
-        .navbar-pro {
-            background: rgba(15, 23, 42, 0.8) !important;
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid var(--surface-border);
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-        }
-
+        /* Logo Neo-Brutalism */
         .brand-logo {
-            font-weight: 800;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-main);
+            text-decoration: none;
             letter-spacing: -0.5px;
-            color: #ffffff;
         }
-        .brand-logo .accent-text {
-            background: var(--brand-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .brand-logo span {
+            color: var(--primary-lime);
         }
 
-        /* Nav Links Modern */
-        .nav-link-custom {
+        /* Navigation Links kiểu App Dashboard */
+        .side-nav-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
             color: var(--text-muted);
+            text-decoration: none;
             font-weight: 600;
-            font-size: 0.88rem;
-            padding: 8px 16px !important;
-            border-radius: 10px;
+            font-size: 0.9rem;
+            border-radius: 8px;
+            margin-bottom: 6px;
             transition: all 0.2s ease;
         }
 
-        .nav-link-custom:hover {
-            color: #ffffff;
-            background: rgba(255, 255, 255, 0.05);
+        .side-nav-link:hover {
+            color: var(--text-main);
+            background: #f1f5f9;
         }
 
-        .nav-link-custom.active {
-            color: var(--brand-cyan);
-            background: rgba(6, 182, 212, 0.1);
+        .side-nav-link.active {
+            color: #ffffff;
+            background: var(--primary-lime);
+            box-shadow: 0 4px 12px var(--primary-lime-glow);
         }
 
-        /* Button Gradient Chuyên Nghiệp */
-        .btn-brand {
-            background: var(--brand-gradient);
+        /* Custom Button Lime */
+        .btn-lime {
+            background: var(--primary-lime);
             color: #ffffff;
-            font-weight: 600;
-            border-radius: 10px;
-            padding: 9px 20px;
+            font-weight: 700;
+            border-radius: 8px;
+            padding: 10px 20px;
             border: none;
-            box-shadow: 0 4px 15px var(--brand-glow);
-            transition: all 0.3s ease;
+            transition: all 0.25s ease;
         }
 
-        .btn-brand:hover {
+        .btn-lime:hover {
+            background: #059669;
             color: #ffffff;
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(6, 182, 212, 0.4);
+            box-shadow: 0 5px 15px var(--primary-lime-glow);
         }
 
-        /* Footer Tối Giản Pro */
-        .footer-pro {
-            background: #060911;
-            border-top: 1px solid var(--surface-border);
-            margin-top: 90px;
+        /* Status Badge */
+        .live-badge {
+            background: rgba(16, 185, 129, 0.1);
+            color: #059669;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* Footer Đơn Giản Dạng Grid */
+        .footer-minimal {
+            background: var(--surface-side);
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 2rem 2rem;
+            margin-top: auto;
+        }
+
+        /* Responsive */
+        @media (max-width: 991.98px) {
+            .app-sidebar {
+                transform: translateX(-100%);
+            }
+            .app-sidebar.show {
+                transform: translateX(0);
+            }
+            .app-main-content {
+                margin-left: 0;
+            }
         }
     </style>
 </head>
-<body class="d-flex flex-column min-vh-100">
+<body>
 
-    <!-- Live Status Top Bar -->
-    <div class="top-live-bar py-1.5">
-        <div class="container d-flex justify-content-between align-items-center">
-            <div class="d-flex align-items-center gap-2">
-                <span class="badge bg-info rounded-circle p-1"><span class="visually-hidden">Live</span></span>
-                <span>Hệ thống cập nhật lịch sân trống theo thời gian thực</span>
-            </div>
-            <div class="d-none d-md-block small">
-                <i class="fa-solid fa-headset me-1"></i> Hotline hỗ trợ: <strong class="text-white">0987.654.321</strong>
-            </div>
-        </div>
-    </div>
+    <div class="app-container">
 
-    <!-- Floating Header / Navbar -->
-    <div class="navbar-floating-container">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-dark navbar-pro px-3 py-2">
-                <a class="navbar-brand brand-logo d-flex align-items-center gap-2" href="/">
-                    <div class="p-2 rounded-3 text-info d-flex align-items-center justify-content-center" style="width: 36px; height: 36px; background: rgba(6,182,212,0.12);">
-                        <i class="fa-solid fa-futbol fs-6 text-info"></i>
-                    </div>
-                    <span>PITCH<span class="accent-text">247</span></span>
-                </a>
-
-                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav mx-auto gap-1">
-                        <li class="nav-item">
-                            <a class="nav-link nav-link-custom active" href="/"><i class="fa-solid fa-compass me-1"></i> Trang chủ</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link nav-link-custom" href="#danh-sach-san"><i class="fa-solid fa-futbol me-1"></i> Danh sách sân</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link nav-link-custom" href="/bookings"><i class="fa-regular fa-calendar-check me-1"></i> Tra cứu đơn</a>
-                        </li>
-                    </ul>
-
-                    <div class="d-flex align-items-center gap-2 mt-3 mt-lg-0">
-                        <a href="#danh-sach-san" class="btn btn-brand btn-sm"><i class="fa-solid fa-bolt me-1"></i> Đặt Sân Ngay</a>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </div>
-
-    <!-- Nội dung chính -->
-    <main class="flex-grow-1">
-        {% block content %}{% endblock %}
-    </main>
-
-    <!-- Footer Pro -->
-    <footer class="footer-pro text-white-50 pt-5 pb-4">
-        <div class="container">
-            <div class="row g-4 pb-4 border-bottom border-secondary border-opacity-10">
-                <div class="col-lg-5">
-                    <a class="brand-logo text-white text-decoration-none d-inline-block mb-3" href="/">
-                        PITCH<span class="accent-text">247</span>
+        <!-- Sidebar Navigation (Cố định bên trái) -->
+        <aside class="app-sidebar" id="appSidebar">
+            <div>
+                <!-- Brand -->
+                <div class="d-flex align-items-center justify-content-between mb-4 px-2">
+                    <a class="brand-logo brand-font" href="/">
+                        <i class="fa-solid fa-bolt text-warning me-1"></i>PITCH<span>247</span>
                     </a>
-                    <p class="small text-muted pe-lg-5">Nền tảng tìm kiếm và đặt lịch sân bóng đá trực tuyến nhanh chóng. Giúp bạn chọn sân phù hợp, kiểm tra lịch trống và đặt sân chỉ trong vài thao tác.</p>
+                    <button class="btn-close d-lg-none" onclick="toggleSidebar()"></button>
                 </div>
-                <div class="col-lg-3 col-6">
-                    <h6 class="text-white fw-bold mb-3 small text-uppercase" style="letter-spacing: 1px;">Dịch Vụ</h6>
-                    <ul class="list-unstyled small d-flex flex-column gap-2 text-muted">
-                        <li><a href="#danh-sach-san" class="text-muted text-decoration-none">Sân bóng 5 người</a></li>
-                        <li><a href="#danh-sach-san" class="text-muted text-decoration-none">Sân bóng 7 người</a></li>
-                        <li><a href="/bookings" class="text-muted text-decoration-none">Tra cứu lịch đặt</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-4 col-6">
-                    <h6 class="text-white fw-bold mb-3 small text-uppercase" style="letter-spacing: 1px;">Liên Hệ Hỗ Trợ</h6>
-                    <p class="small text-muted mb-1"><i class="fa-solid fa-phone me-2 text-info"></i>0987.654.321</p>
-                    <p class="small text-muted mb-1"><i class="fa-solid fa-envelope me-2 text-info"></i>hotro@pitch247.vn</p>
-                    <p class="small text-muted"><i class="fa-solid fa-location-dot me-2 text-info"></i>Hà Nội, Việt Nam</p>
-                </div>
+
+                <!-- Navigation Menu -->
+                <nav class="nav flex-column">
+                    <a class="side-nav-link active" href="/">
+                        <i class="fa-solid fa-house"></i> Trang Chủ
+                    </a>
+                    <a class="side-nav-link" href="#danh-sach-san">
+                        <i class="fa-solid fa-futbol"></i> Danh Sách Sân
+                    </a>
+                    <a class="side-nav-link" href="/bookings">
+                        <i class="fa-solid fa-ticket"></i> Tra Cứu Đơn
+                    </a>
+                    <a class="side-nav-link" href="#">
+                        <i class="fa-solid fa-map-location-dot"></i> Bản Đồ Sân
+                    </a>
+                </nav>
             </div>
-            <div class="text-center small pt-4 text-muted">
-                <p class="mb-0">&copy; 2026 PITCH247. Designed for Modern Sports.</p>
+
+            <!-- Bottom Widget -->
+            <div class="p-3 rounded-3" style="background: var(--bg-main); border: 1px solid var(--border-color);">
+                <div class="small text-muted mb-1">Cần hỗ trợ gấp?</div>
+                <div class="fw-bold text-dark mb-2"><i class="fa-solid fa-phone text-warning me-1"></i> 0987.654.321</div>
+                <a href="#danh-sach-san" class="btn btn-lime btn-sm w-100">Đặt Sân Ngay</a>
             </div>
+        </aside>
+
+        <!-- Main Wrapper -->
+        <div class="app-main-content">
+
+            <!-- Top Header Bar -->
+            <header class="top-header d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-outline-secondary d-lg-none p-2" onclick="toggleSidebar()">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <div class="live-badge d-none d-sm-inline-flex align-items-center gap-2">
+                        <span class="spinner-grow spinner-grow-sm text-success" style="width: 6px; height: 6px;" role="status"></span>
+                        Hệ thống hoạt động 24/7
+                    </div>
+                </div>
+
+                <!-- Quick Action/Search Bar -->
+                <div class="d-flex align-items-center gap-3">
+                    <a href="/bookings" class="btn btn-outline-dark btn-sm font-monospace">
+                        <i class="fa-solid fa-magnifying-glass me-1"></i> Kiểm Tra Đặt Sân
+                    </a>
+                    <a href="#danh-sach-san" class="btn btn-lime btn-sm d-none d-sm-inline-block">
+                        <i class="fa-solid fa-plus me-1"></i> Đặt Sân
+                    </a>
+                </div>
+            </header>
+
+            <!-- Main Content Area -->
+            <main class="p-4 flex-grow-1">
+                {% block content %}{% endblock %}
+            </main>
+
+            <!-- Footer Minimal -->
+            <footer class="footer-minimal">
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="brand-logo brand-font mb-2">PITCH<span>247</span></div>
+                        <p class="text-muted small mb-0" style="max-width: 400px;">
+                            Trải nghiệm đặt sân bóng phong cách mới. Nhanh chóng, chính xác và minh bạch theo thời gian thực.
+                        </p>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="text-dark fw-bold mb-2 small text-uppercase">Liên kết</div>
+                        <ul class="list-unstyled small text-muted mb-0 d-flex flex-column gap-1">
+                            <li><a href="#danh-sach-san" class="text-muted text-decoration-none">Sân 5 người</a></li>
+                            <li><a href="#danh-sach-san" class="text-muted text-decoration-none">Sân 7 người</a></li>
+                            <li><a href="/bookings" class="text-muted text-decoration-none">Tra cứu đơn</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="text-dark fw-bold mb-2 small text-uppercase">Kết nối</div>
+                        <div class="d-flex gap-2">
+                            <a href="#" class="btn btn-outline-secondary btn-sm"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" class="btn btn-outline-secondary btn-sm"><i class="fa-brands fa-tiktok"></i></a>
+                            <a href="#" class="btn btn-outline-secondary btn-sm"><i class="fa-brands fa-zalo"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-top mt-4 pt-3 text-center text-muted small">
+                    &copy; 2026 PITCH247. All rights reserved.
+                </div>
+            </footer>
+
         </div>
-    </footer>
+    </div>
 
     <!-- JS Files -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 800, once: true });
+
+        function toggleSidebar() {
+            document.getElementById('appSidebar').classList.toggle('show');
+        }
     </script>
 </body>
 </html>
