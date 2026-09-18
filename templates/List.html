@@ -49,7 +49,6 @@
             font-family: 'Space Grotesk', sans-serif;
         }
 
-        /* Layout Bố Cục Sidebar Bên Trái */
         .app-container {
             display: flex;
             min-height: 100vh;
@@ -80,7 +79,6 @@
             min-width: 0;
         }
 
-        /* Top Bar */
         .top-header {
             height: 70px;
             background: rgba(255, 255, 255, 0.85);
@@ -92,7 +90,6 @@
             padding: 0 2rem;
         }
 
-        /* Logo */
         .brand-logo {
             font-size: 1.4rem;
             font-weight: 700;
@@ -105,7 +102,6 @@
             color: var(--primary-lime);
         }
 
-        /* Navigation Links */
         .side-nav-link {
             display: flex;
             align-items: center;
@@ -131,7 +127,6 @@
             box-shadow: 0 4px 12px var(--primary-lime-glow);
         }
 
-        /* Custom Button Lime */
         .btn-lime {
             background: var(--primary-lime);
             color: #ffffff;
@@ -149,7 +144,6 @@
             box-shadow: 0 5px 15px var(--primary-lime-glow);
         }
 
-        /* Status Badge */
         .live-badge {
             background: rgba(16, 185, 129, 0.1);
             color: #059669;
@@ -160,7 +154,25 @@
             font-weight: 600;
         }
 
-        /* Footer */
+        .modal-content {
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal-header {
+            border-bottom: 1px solid var(--border-color);
+            background: #fafafa;
+            border-top-left-radius: 16px;
+            border-top-right-radius: 16px;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            border-color: var(--primary-lime);
+            box-shadow: 0 0 0 0.25rem rgba(16, 185, 129, 0.25);
+        }
+
         .footer-minimal {
             background: var(--surface-side);
             border-top: 1px solid var(--border-color);
@@ -168,7 +180,6 @@
             margin-top: auto;
         }
 
-        /* Responsive */
         @media (max-width: 991.98px) {
             .app-sidebar {
                 transform: translateX(-100%);
@@ -193,20 +204,20 @@
         <aside class="app-sidebar" id="appSidebar">
             <div>
                 <div class="d-flex align-items-center justify-content-between mb-4 px-2">
-                    <a class="brand-logo brand-font" href="#">
+                    <a class="brand-logo brand-font" href="index.html">
                         <i class="fa-solid fa-bolt text-warning me-1"></i>PITCH<span>247</span>
                     </a>
                     <button class="btn-close d-lg-none" onclick="toggleSidebar()"></button>
                 </div>
 
                 <nav class="nav flex-column">
-                    <a class="side-nav-link" href="#">
+                    <a class="side-nav-link" href="index.html">
                         <i class="fa-solid fa-house"></i> Trang Chủ
                     </a>
-                    <a class="side-nav-link active" href="#danh-sach-san">
+                    <a class="side-nav-link active" href="list.html">
                         <i class="fa-solid fa-futbol"></i> Danh Sách Sân
                     </a>
-                    <a class="side-nav-link" href="#">
+                    <a class="side-nav-link" href="/bookings">
                         <i class="fa-solid fa-ticket"></i> Tra Cứu Đơn
                     </a>
                     <a class="side-nav-link" href="#">
@@ -219,7 +230,8 @@
                 <div class="small text-muted mb-1">Cần hỗ trợ gấp?</div>
                 <div class="fw-bold text-dark mb-2"><i class="fa-solid fa-phone text-warning me-1"></i> 0987.654.321
                 </div>
-                <a href="#danh-sach-san" class="btn btn-lime btn-sm w-100">Đặt Sân Ngay</a>
+                <button class="btn btn-lime btn-sm w-100" data-bs-toggle="modal" data-bs-target="#bookingModal">Đặt Sân
+                    Ngay</button>
             </div>
         </aside>
 
@@ -240,12 +252,13 @@
                 </div>
 
                 <div class="d-flex align-items-center gap-3">
-                    <a href="#" class="btn btn-outline-dark btn-sm font-monospace">
+                    <a href="/bookings" class="btn btn-outline-dark btn-sm font-monospace">
                         <i class="fa-solid fa-magnifying-glass me-1"></i> Kiểm Tra Đặt Sân
                     </a>
-                    <a href="#danh-sach-san" class="btn btn-lime btn-sm d-none d-sm-inline-block">
+                    <button class="btn btn-lime btn-sm d-none d-sm-inline-block" data-bs-toggle="modal"
+                        data-bs-target="#bookingModal">
                         <i class="fa-solid fa-plus me-1"></i> Đặt Sân
-                    </a>
+                    </button>
                 </div>
             </header>
 
@@ -254,19 +267,18 @@
 
                 <section id="danh-sach-san">
 
-                    <!-- Tiêu đề trang -->
                     <div class="mb-4">
                         <h2 class="fw-bold mb-1">Danh Sách Sân Bóng</h2>
                         <p class="text-muted mb-0">Chọn sân phù hợp và đặt lịch chỉ trong vài giây</p>
                     </div>
 
-                    <!-- Thanh bộ lọc thông minh -->
+                    <!-- Bộ lọc thông minh -->
                     <div class="card border-0 shadow-sm mb-4" style="border-radius: 12px;">
                         <div class="card-body p-3">
                             <div class="row g-2 align-items-center">
                                 <div class="col-md-3 col-6">
                                     <select class="form-select" id="filterSize">
-                                        <option value="">Loại sân</option>
+                                        <option value="">Tất cả loại sân</option>
                                         <option value="5">Sân 5 người</option>
                                         <option value="7">Sân 7 người</option>
                                         <option value="11">Sân 11 người</option>
@@ -301,7 +313,7 @@
                     <!-- Lưới thẻ sân (Card View) -->
                     <div class="row g-4" id="pitchGrid">
 
-                        <!-- ===== THẺ SÂN SỐ 1 ===== -->
+                        <!-- THẺ SÂN 1 (Sân 7A) -->
                         <div class="col-lg-4 col-md-6 pitch-card" data-size="7" data-roof="covered"
                             data-time="peak,normal" data-price="mid" data-aos="fade-up">
                             <div class="card h-100 border-0 shadow-sm" style="border-radius: 14px; overflow: hidden;">
@@ -311,31 +323,28 @@
                                     <span class="position-absolute top-0 start-0 m-2 badge bg-success">
                                         <i class="fa-solid fa-circle-check me-1"></i>Sẵn sàng phục vụ
                                     </span>
-                                    <span class="position-absolute top-0 end-0 m-2 badge bg-dark bg-opacity-75">
-                                        SBF-01
-                                    </span>
+                                    <span
+                                        class="position-absolute top-0 end-0 m-2 badge bg-dark bg-opacity-75">SBF-01</span>
                                 </div>
 
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between align-items-start mb-2">
                                         <h5 class="fw-bold mb-0">Sân 7A</h5>
                                         <span class="badge"
-                                            style="background: var(--primary-lime-glow); color: var(--primary-lime);">
-                                            Sân 7 người
-                                        </span>
+                                            style="background: var(--primary-lime-glow); color: var(--primary-lime);">Sân
+                                            7 người</span>
                                     </div>
 
                                     <p class="text-muted small mb-2">
-                                        <i class="fa-solid fa-location-dot me-1"></i>
-                                        Cụm sân Thanh Xuân · 12 Nguyễn Trãi, Hà Nội
+                                        <i class="fa-solid fa-location-dot me-1 text-danger"></i> Cụm sân Thanh Xuân ·
+                                        12 Nguyễn Trãi, Hà Nội
                                     </p>
 
                                     <div class="d-flex flex-wrap gap-1 mb-3">
                                         <span class="badge bg-light text-dark border">Cỏ nhân tạo</span>
-                                        <span class="badge bg-light text-dark border">Mới 100%</span>
                                         <span class="badge bg-light text-dark border">Có mái che</span>
                                         <span class="badge bg-light text-dark border"><i
-                                                class="fa-solid fa-lightbulb me-1"></i>Đèn LED (đã gồm)</span>
+                                                class="fa-solid fa-lightbulb me-1"></i>Đèn LED</span>
                                     </div>
 
                                     <div class="d-flex gap-3 text-muted small mb-3">
@@ -357,46 +366,42 @@
                                     </div>
 
                                     <div class="d-flex gap-2">
-                                        <a href="#" class="btn btn-lime flex-grow-1">Đặt Sân Ngay</a>
-                                        <button class="btn btn-outline-secondary" title="Xem chi tiết">
-                                            <i class="fa-solid fa-circle-info"></i>
-                                        </button>
+                                        <button class="btn btn-lime flex-grow-1" data-bs-toggle="modal"
+                                            data-bs-target="#bookingModal" data-pitch-type="7">Đặt Sân Ngay</button>
+                                        <button class="btn btn-outline-secondary" title="Xem chi tiết"><i
+                                                class="fa-solid fa-circle-info"></i></button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- ===== HẾT THẺ SÂN SỐ 1 ===== -->
 
-                        <!-- ===== THẺ SÂN SỐ 2 (đang bảo trì) ===== -->
+                        <!-- THẺ SÂN 2 (Sân 5B) -->
                         <div class="col-lg-4 col-md-6 pitch-card" data-size="5" data-roof="outdoor" data-time="normal"
                             data-price="low" data-aos="fade-up" data-aos-delay="100">
                             <div class="card h-100 border-0 shadow-sm" style="border-radius: 14px; overflow: hidden;">
                                 <div class="position-relative">
                                     <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=600"
-                                        class="w-100" style="height: 180px; object-fit: cover; filter: grayscale(50%);"
+                                        class="w-100" style="height: 180px; object-fit: cover; filter: grayscale(40%);"
                                         alt="Sân 5B">
                                     <span class="position-absolute top-0 start-0 m-2 badge bg-warning text-dark">
                                         <i class="fa-solid fa-wrench me-1"></i>Đang bảo trì
                                     </span>
-                                    <span class="position-absolute top-0 end-0 m-2 badge bg-dark bg-opacity-75">
-                                        SBF-02
-                                    </span>
+                                    <span
+                                        class="position-absolute top-0 end-0 m-2 badge bg-dark bg-opacity-75">SBF-02</span>
                                 </div>
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between align-items-start mb-2">
                                         <h5 class="fw-bold mb-0">Sân 5B</h5>
                                         <span class="badge"
-                                            style="background: var(--primary-lime-glow); color: var(--primary-lime);">
-                                            Sân 5 người
-                                        </span>
+                                            style="background: var(--primary-lime-glow); color: var(--primary-lime);">Sân
+                                            5 người</span>
                                     </div>
                                     <p class="text-muted small mb-2">
-                                        <i class="fa-solid fa-location-dot me-1"></i>
-                                        Cụm sân Thanh Xuân · 12 Nguyễn Trãi, Hà Nội
+                                        <i class="fa-solid fa-location-dot me-1 text-danger"></i> Cụm sân Thanh Xuân ·
+                                        12 Nguyễn Trãi, Hà Nội
                                     </p>
                                     <div class="d-flex flex-wrap gap-1 mb-3">
                                         <span class="badge bg-light text-dark border">Cỏ tự nhiên</span>
-                                        <span class="badge bg-light text-dark border">Cần bảo trì</span>
                                         <span class="badge bg-light text-dark border">Ngoài trời</span>
                                     </div>
                                     <div class="d-flex gap-3 text-muted small mb-3">
@@ -419,7 +424,59 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- ===== HẾT THẺ SÂN SỐ 2 ===== -->
+
+                        <!-- THẺ SÂN 3 (Sân Đại 11C) -->
+                        <div class="col-lg-4 col-md-6 pitch-card" data-size="11" data-roof="outdoor"
+                            data-time="peak,normal" data-price="high" data-aos="fade-up" data-aos-delay="200">
+                            <div class="card h-100 border-0 shadow-sm" style="border-radius: 14px; overflow: hidden;">
+                                <div class="position-relative">
+                                    <img src="https://munichgroup.vn/wp-content/uploads/thi-cong-san-bong-da-mini-9-1.webp"
+                                        class="w-100" style="height: 180px; object-fit: cover;" alt="Sân 11C">
+                                    <span class="position-absolute top-0 start-0 m-2 badge bg-success">
+                                        <i class="fa-solid fa-circle-check me-1"></i>Sẵn sàng phục vụ
+                                    </span>
+                                    <span
+                                        class="position-absolute top-0 end-0 m-2 badge bg-dark bg-opacity-75">SBF-03</span>
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start mb-2">
+                                        <h5 class="fw-bold mb-0">Sân Đại 11C</h5>
+                                        <span
+                                            class="badge bg-warning-subtle text-warning border border-warning-subtle">Sân
+                                            11 người</span>
+                                    </div>
+                                    <p class="text-muted small mb-2">
+                                        <i class="fa-solid fa-location-dot me-1 text-danger"></i> Khu C · Tiêu chuẩn thi
+                                        đấu quốc tế
+                                    </p>
+                                    <div class="d-flex flex-wrap gap-1 mb-3">
+                                        <span class="badge bg-light text-dark border">Cỏ FIFA Premium</span>
+                                        <span class="badge bg-light text-dark border">Phòng thay đồ</span>
+                                    </div>
+                                    <div class="d-flex gap-3 text-muted small mb-3">
+                                        <span title="Wifi miễn phí"><i class="fa-solid fa-wifi"></i></span>
+                                        <span title="Nước uống"><i class="fa-solid fa-bottle-water"></i></span>
+                                        <span title="Phòng thay đồ"><i class="fa-solid fa-shirt"></i></span>
+                                        <span title="Bãi đỗ xe"><i class="fa-solid fa-square-parking"></i></span>
+                                    </div>
+                                    <hr class="my-2">
+                                    <div class="d-flex justify-content-between small mb-1">
+                                        <span class="text-muted">Giờ thường</span>
+                                        <span class="fw-semibold">600.000đ/giờ</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between small mb-3">
+                                        <span class="text-muted">Giờ vàng</span>
+                                        <span class="fw-bold" style="color: var(--primary-lime);">800.000đ/giờ</span>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <button class="btn btn-lime flex-grow-1" data-bs-toggle="modal"
+                                            data-bs-target="#bookingModal" data-pitch-type="11">Đặt Sân Ngay</button>
+                                        <button class="btn btn-outline-secondary" title="Xem chi tiết"><i
+                                                class="fa-solid fa-circle-info"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
 
@@ -446,9 +503,9 @@
                     <div class="col-md-3 col-6">
                         <div class="text-dark fw-bold mb-2 small text-uppercase">Liên kết</div>
                         <ul class="list-unstyled small text-muted mb-0 d-flex flex-column gap-1">
-                            <li><a href="#danh-sach-san" class="text-muted text-decoration-none">Sân 5 người</a></li>
-                            <li><a href="#danh-sach-san" class="text-muted text-decoration-none">Sân 7 người</a></li>
-                            <li><a href="#" class="text-muted text-decoration-none">Tra cứu đơn</a></li>
+                            <li><a href="list.html" class="text-muted text-decoration-none">Sân 5 người</a></li>
+                            <li><a href="list.html" class="text-muted text-decoration-none">Sân 7 người</a></li>
+                            <li><a href="/bookings" class="text-muted text-decoration-none">Tra cứu đơn</a></li>
                         </ul>
                     </div>
                     <div class="col-md-3 col-6">
@@ -457,7 +514,8 @@
                             <a href="#" class="btn btn-outline-secondary btn-sm"><i
                                     class="fa-brands fa-facebook-f"></i></a>
                             <a href="#" class="btn btn-outline-secondary btn-sm"><i class="fa-brands fa-tiktok"></i></a>
-                            <a href="#" class="btn btn-outline-secondary btn-sm"><i class="fa-brands fa-zalo"></i></a>
+                            <a href="#" class="btn btn-outline-secondary btn-sm"><i
+                                    class="fa-solid fa-comment-dots"></i></a>
                         </div>
                     </div>
                 </div>
@@ -469,43 +527,158 @@
         </div>
     </div>
 
+    <!-- POPUP / MODAL ĐẶT SÂN -->
+    <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-heading brand-font fw-bold mb-0" id="bookingModalLabel">
+                        <i class="fa-solid fa-calendar-check text-success me-2"></i>Đặt Sân Bóng Nhanh
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="bookingForm">
+                    <div class="modal-body p-4">
+                        <div class="mb-3">
+                            <label for="customerName" class="form-label fw-semibold small">Họ và Tên <span
+                                    class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="customerName"
+                                placeholder="Nhập họ và tên người đặt" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="customerPhone" class="form-label fw-semibold small">Số Điện Thoại <span
+                                    class="text-danger">*</span></label>
+                            <input type="tel" class="form-control" id="customerPhone" placeholder="VD: 0987654321"
+                                pattern="[0-9]{10}" required>
+                        </div>
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label for="pitchType" class="form-label fw-semibold small">Loại Sân <span
+                                        class="text-danger">*</span></label>
+                                <select class="form-select" id="pitchType" required>
+                                    <option value="" selected disabled>Chọn sân...</option>
+                                    <option value="5">Sân 5 Người</option>
+                                    <option value="7">Sân 7 Người</option>
+                                    <option value="11">Sân 11 Người</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="bookingDate" class="form-label fw-semibold small">Ngày Đá <span
+                                        class="text-danger">*</span></label>
+                                <input type="date" class="form-control" id="bookingDate" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="bookingTime" class="form-label fw-semibold small">Khung Giờ <span
+                                    class="text-danger">*</span></label>
+                            <select class="form-select" id="bookingTime" required>
+                                <option value="" selected disabled>Chọn khung giờ...</option>
+                                <option value="16:00-17:30">16:00 - 17:30</option>
+                                <option value="17:30-19:00">17:30 - 19:00</option>
+                                <option value="19:00-20:30">19:00 - 20:30</option>
+                                <option value="20:30-22:00">20:30 - 22:00</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="bookingNotes" class="form-label fw-semibold small">Ghi Chú Yêu Cầu</label>
+                            <textarea class="form-control" id="bookingNotes" rows="2"
+                                placeholder="Ví dụ: Cần mượn thêm áo lưới, bóng thi đấu..."></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer bg-light">
+                        <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Hủy
+                            Bỏ</button>
+                        <button type="submit" class="btn btn-lime btn-sm">Xác Nhận Đặt Sân</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <!-- JS Files -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 800, once: true });
+        document.addEventListener('DOMContentLoaded', () => {
+            AOS.init({ duration: 800, once: true });
+
+            // Set ngày tối thiểu là hôm nay
+            const bookingDateInput = document.getElementById('bookingDate');
+            if (bookingDateInput) {
+                bookingDateInput.min = new Date().toISOString().split('T')[0];
+            }
+
+            // Pre-select loại sân khi bấm mở Modal
+            const bookingModalEl = document.getElementById('bookingModal');
+            if (bookingModalEl) {
+                bookingModalEl.addEventListener('show.bs.modal', (event) => {
+                    const button = event.relatedTarget;
+                    if (button) {
+                        const pitchType = button.getAttribute('data-pitch-type');
+                        if (pitchType) {
+                            const pitchSelect = document.getElementById('pitchType');
+                            if (pitchSelect) pitchSelect.value = pitchType;
+                        }
+                    }
+                });
+            }
+
+            // Xử lý gửi Form Đặt Sân
+            const bookingForm = document.getElementById('bookingForm');
+            if (bookingForm) {
+                bookingForm.addEventListener('submit', (event) => {
+                    event.preventDefault();
+
+                    const name = document.getElementById('customerName').value.trim();
+                    const phone = document.getElementById('customerPhone').value.trim();
+                    const pitch = document.getElementById('pitchType').value;
+                    const date = document.getElementById('bookingDate').value;
+                    const time = document.getElementById('bookingTime').value;
+
+                    alert(`Đặt sân thành công!\n\nNgười đặt: ${name}\nSĐT: ${phone}\nLoại sân: Sân ${pitch} người\nThời gian: ${time} (${date})`);
+
+                    const modalInstance = bootstrap.Modal.getInstance(bookingModalEl);
+                    if (modalInstance) modalInstance.hide();
+                    bookingForm.reset();
+                });
+            }
+
+            // Logic lọc danh sách sân thông minh
+            function applyFilters() {
+                const size = document.getElementById('filterSize').value;
+                const roof = document.getElementById('filterRoof').value;
+                const time = document.getElementById('filterTime').value;
+                const price = document.getElementById('filterPrice').value;
+
+                const cards = document.querySelectorAll('.pitch-card');
+                let visibleCount = 0;
+
+                cards.forEach(card => {
+                    const matchSize = !size || card.dataset.size === size;
+                    const matchRoof = !roof || card.dataset.roof === roof;
+                    const matchTime = !time || card.dataset.time.split(',').includes(time);
+                    const matchPrice = !price || card.dataset.price === price;
+
+                    const isMatch = matchSize && matchRoof && matchTime && matchPrice;
+                    card.style.display = isMatch ? '' : 'none';
+                    if (isMatch) visibleCount++;
+                });
+
+                const noResultMsg = document.getElementById('noResultMsg');
+                if (noResultMsg) {
+                    noResultMsg.classList.toggle('d-none', visibleCount > 0);
+                }
+            }
+
+            ['filterSize', 'filterRoof', 'filterTime', 'filterPrice'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.addEventListener('change', applyFilters);
+            });
+        });
 
         function toggleSidebar() {
             document.getElementById('appSidebar').classList.toggle('show');
         }
-
-        // Lọc danh sách sân theo dropdown (bộ lọc thông minh)
-        function applyFilters() {
-            const size = document.getElementById('filterSize').value;
-            const roof = document.getElementById('filterRoof').value;
-            const time = document.getElementById('filterTime').value;
-            const price = document.getElementById('filterPrice').value;
-
-            const cards = document.querySelectorAll('.pitch-card');
-            let visibleCount = 0;
-
-            cards.forEach(card => {
-                const matchSize = !size || card.dataset.size === size;
-                const matchRoof = !roof || card.dataset.roof === roof;
-                const matchTime = !time || card.dataset.time.split(',').includes(time);
-                const matchPrice = !price || card.dataset.price === price;
-
-                const isMatch = matchSize && matchRoof && matchTime && matchPrice;
-                card.style.display = isMatch ? '' : 'none';
-                if (isMatch) visibleCount++;
-            });
-
-            document.getElementById('noResultMsg').classList.toggle('d-none', visibleCount > 0);
-        }
-
-        ['filterSize', 'filterRoof', 'filterTime', 'filterPrice'].forEach(id => {
-            document.getElementById(id).addEventListener('change', applyFilters);
-        });
     </script>
 </body>
 

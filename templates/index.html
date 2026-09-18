@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi" data-bs-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,17 +11,20 @@
     <!-- FontAwesome 6.5 Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Google Fonts: Space Grotesk & Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
         :root {
             /* Hệ màu Mới: Light Neo-Cyber */
-            --primary-lime: #10b981; /* Emerald Lime/Green đậm */
+            --primary-lime: #10b981;
+            /* Emerald Lime/Green đậm */
             --primary-lime-glow: rgba(16, 185, 129, 0.2);
             --secondary-violet: #4f46e5;
-            
+
             --bg-main: #f8fafc;
             --surface-side: #ffffff;
             --surface-card: #ffffff;
@@ -36,7 +40,13 @@
             overflow-x: hidden;
         }
 
-        h1, h2, h3, h4, h5, h6, .brand-font {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .brand-font {
             font-family: 'Space Grotesk', sans-serif;
         }
 
@@ -60,7 +70,7 @@
             flex-direction: column;
             justify-content: space-between;
             transition: all 0.3s ease;
-            box-shadow: 2px 0 10px rgba(0,0,0,0.02);
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.02);
         }
 
         .app-main-content {
@@ -91,6 +101,7 @@
             text-decoration: none;
             letter-spacing: -0.5px;
         }
+
         .brand-logo span {
             color: var(--primary-lime);
         }
@@ -151,18 +162,23 @@
         }
 
         /* Custom Cards & Carousel */
-        .pitch-card, .tournament-card {
+        .pitch-card,
+        .tournament-card {
             background: var(--surface-card);
             border: 1px solid var(--border-color);
             border-radius: 12px;
             overflow: hidden;
             transition: all 0.3s ease;
         }
-        .pitch-card:hover, .tournament-card:hover {
+
+        .pitch-card:hover,
+        .tournament-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.08);
         }
-        .pitch-img, .tournament-img {
+
+        .pitch-img,
+        .tournament-img {
             height: 190px;
             object-fit: cover;
             width: 100%;
@@ -173,11 +189,13 @@
             border-radius: 16px;
             overflow: hidden;
         }
+
         .hero-carousel img {
             height: 100%;
             object-fit: cover;
             filter: brightness(0.7);
         }
+
         .hero-carousel .carousel-caption {
             background: rgba(15, 23, 42, 0.65);
             backdrop-filter: blur(8px);
@@ -196,6 +214,7 @@
             border-radius: 8px;
             padding: 8px 18px;
         }
+
         .nav-pills .nav-link.active {
             background-color: var(--text-main);
             color: #ffffff;
@@ -207,13 +226,16 @@
             border: 1px solid var(--border-color);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
         }
+
         .modal-header {
             border-bottom: 1px solid var(--border-color);
             background: #fafafa;
             border-top-left-radius: 16px;
             border-top-right-radius: 16px;
         }
-        .form-control:focus, .form-select:focus {
+
+        .form-control:focus,
+        .form-select:focus {
             border-color: var(--primary-lime);
             box-shadow: 0 0 0 0.25rem rgba(16, 185, 129, 0.25);
         }
@@ -231,18 +253,22 @@
             .app-sidebar {
                 transform: translateX(-100%);
             }
+
             .app-sidebar.show {
                 transform: translateX(0);
             }
+
             .app-main-content {
                 margin-left: 0;
             }
+
             .hero-carousel .carousel-item {
                 height: 260px;
             }
         }
     </style>
 </head>
+
 <body>
 
     <div class="app-container">
@@ -278,8 +304,10 @@
             <!-- Bottom Widget -->
             <div class="p-3 rounded-3" style="background: var(--bg-main); border: 1px solid var(--border-color);">
                 <div class="small text-muted mb-1">Cần hỗ trợ gấp?</div>
-                <div class="fw-bold text-dark mb-2"><i class="fa-solid fa-phone text-warning me-1"></i> 0987.654.321</div>
-                <button class="btn btn-lime btn-sm w-100" data-bs-toggle="modal" data-bs-target="#bookingModal">Đặt Sân Ngay</button>
+                <div class="fw-bold text-dark mb-2"><i class="fa-solid fa-phone text-warning me-1"></i> 0987.654.321
+                </div>
+                <button class="btn btn-lime btn-sm w-100" data-bs-toggle="modal" data-bs-target="#bookingModal">Đặt Sân
+                    Ngay</button>
             </div>
         </aside>
 
@@ -293,7 +321,8 @@
                         <i class="fa-solid fa-bars"></i>
                     </button>
                     <div class="live-badge d-none d-sm-inline-flex align-items-center gap-2">
-                        <span class="spinner-grow spinner-grow-sm text-success" style="width: 6px; height: 6px;" role="status"></span>
+                        <span class="spinner-grow spinner-grow-sm text-success" style="width: 6px; height: 6px;"
+                            role="status"></span>
                         Hệ thống hoạt động 24/7
                     </div>
                 </div>
@@ -303,7 +332,8 @@
                     <a href="/bookings" class="btn btn-outline-dark btn-sm font-monospace">
                         <i class="fa-solid fa-magnifying-glass me-1"></i> Kiểm Tra Đặt Sân
                     </a>
-                    <button class="btn btn-lime btn-sm d-none d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#bookingModal">
+                    <button class="btn btn-lime btn-sm d-none d-sm-inline-block" data-bs-toggle="modal"
+                        data-bs-target="#bookingModal">
                         <i class="fa-solid fa-plus me-1"></i> Đặt Sân
                     </button>
                 </div>
@@ -311,157 +341,204 @@
 
             <!-- Main Content Area -->
             <main class="p-4 flex-grow-1">
-                
+
                 <!-- 1. BANNER TRƯỢT (HERO CAROUSEL) -->
                 <section class="mb-5" data-aos="fade-up">
                     <div id="heroCarousel" class="carousel slide hero-carousel shadow-sm" data-bs-ride="carousel">
                         <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+                            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0"
+                                class="active"></button>
                             <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
                             <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="https://munichgroup.vn/wp-content/uploads/thi-cong-san-bong-da-mini-9-1.webp" class="d-block w-100" alt="Sân cỏ nhân tạo">
+                                <img src="https://munichgroup.vn/wp-content/uploads/thi-cong-san-bong-da-mini-9-1.webp"
+                                    class="d-block w-100" alt="Sân cỏ nhân tạo">
                                 <div class="carousel-caption">
                                     <span class="badge bg-success mb-2">Tiêu Chuẩn FIFA</span>
                                     <h2 class="fw-bold text-white mb-1">Sân Cỏ Nhân Tạo Thế Hệ Mới</h2>
-                                    <p class="small text-white-50 mb-3 d-none d-md-block">Đèn chiếu sáng LED chống chói, mặt cỏ chuẩn quốc tế bảo vệ đôi chân của bạn.</p>
-                                    <button class="btn btn-lime btn-sm" data-bs-toggle="modal" data-bs-target="#bookingModal">Đặt Khung Giờ Đẹp</button>
+                                    <p class="small text-white-50 mb-3 d-none d-md-block">Đèn chiếu sáng LED chống chói,
+                                        mặt cỏ chuẩn quốc tế bảo vệ đôi chân của bạn.</p>
+                                    <button class="btn btn-lime btn-sm" data-bs-toggle="modal"
+                                        data-bs-target="#bookingModal">Đặt Khung Giờ Đẹp</button>
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTlGiA3ZpSMlOmQhj4yatg86OzFxOJzQgckO-wUN_pk4Yq16Z6-i4rgoVTrsJEsj9ocis3uCrDb7MXk9U4" class="d-block w-100" alt="Giải đấu phong trào">
+                                <img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTlGiA3ZpSMlOmQhj4yatg86OzFxOJzQgckO-wUN_pk4Yq16Z6-i4rgoVTrsJEsj9ocis3uCrDb7MXk9U4"
+                                    class="d-block w-100" alt="Giải đấu phong trào">
                                 <div class="carousel-caption">
                                     <span class="badge bg-warning text-dark mb-2">Sắp Diễn Ra</span>
                                     <h2 class="fw-bold text-white mb-1">Giải Bóng Đá Bình Minh Champions Cup 2026</h2>
-                                    <p class="small text-white-50 mb-3 d-none d-md-block">Tổng giá trị giải thưởng lên đến 50.000.000 VNĐ. Khởi tranh từ ngày 15/10.</p>
+                                    <p class="small text-white-50 mb-3 d-none d-md-block">Tổng giá trị giải thưởng lên
+                                        đến 50.000.000 VNĐ. Khởi tranh từ ngày 15/10.</p>
                                     <a href="#giai-dau" class="btn btn-light btn-sm fw-bold">Xem Chi Tiết</a>
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <img src="https://munichgroup.vn/wp-content/uploads/thi-cong-san-bong-da-mini-9-1.webp" class="d-block w-100" alt="Tiện ích sân">
+                                <img src="https://munichgroup.vn/wp-content/uploads/thi-cong-san-bong-da-mini-9-1.webp"
+                                    class="d-block w-100" alt="Tiện ích sân">
                                 <div class="carousel-caption">
                                     <span class="badge bg-info mb-2">Dịch Vụ Đi Kèm</span>
                                     <h2 class="fw-bold text-white mb-1">Đầy Đủ Dụng Cụ & Nước Uống</h2>
-                                    <p class="small text-white-50 mb-3 d-none d-md-block">Hỗ trợ trọng tài, áo lưới tập luyện và nước uống miễn phí cho các đội đặt cố định.</p>
-                                    <button class="btn btn-lime btn-sm" data-bs-toggle="modal" data-bs-target="#bookingModal">Liên Hệ Ngay</button>
+                                    <p class="small text-white-50 mb-3 d-none d-md-block">Hỗ trợ trọng tài, áo lưới tập
+                                        luyện và nước uống miễn phí cho các đội đặt cố định.</p>
+                                    <button class="btn btn-lime btn-sm" data-bs-toggle="modal"
+                                        data-bs-target="#bookingModal">Liên Hệ Ngay</button>
                                 </div>
                             </div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel"
+                            data-bs-slide="prev">
                             <span class="carousel-control-prev-icon"></span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel"
+                            data-bs-slide="next">
                             <span class="carousel-control-next-icon"></span>
                         </button>
                     </div>
                 </section>
 
-<!-- 2. DANH SÁCH SÂN BÓNG -->
-<section id="danh-sach-san" class="mb-5" data-aos="fade-up">
-    <!-- Header Section -->
-    <div class="d-flex justify-content-between align-items-end mb-4">
-        <div>
-            <h3 class="fw-bold mb-1">Danh Sách Sân Bóng</h3>
-            <p class="text-muted small mb-0">Hệ thống sân mini 5, 7 và 11 người hiện đại</p>
-        </div>
-        <span class="badge bg-white text-dark border px-3 py-2 rounded-pill small fw-semibold shadow-sm">3 Loại Sân</span>
-    </div>
-
-    <div class="row g-4">
-        <!-- Sân A1 (Sân 5) -->
-        <div class="col-md-4">
-            <div class="pitch-card h-100 d-flex flex-column border rounded-3 overflow-hidden shadow-sm">
-                <div class="ratio ratio-16x9">
-                    <img src="https://munichgroup.vn/wp-content/uploads/thi-cong-san-bong-da-mini-9-1.webp" class="pitch-img object-fit-cover" alt="Sân 5 người">
-                </div>
-                <div class="p-3 flex-grow-1 d-flex flex-column justify-content-between">
-                    <div>
-                        <div class="d-flex justify-content-between align-items-center mb-2">
-                            <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1">Sân 5 Người</span>
-                            <span class="fw-bold text-primary fs-6">250.000đ <small class="text-muted fw-normal">/h</small></span>
+                <!-- 2. DANH SÁCH SÂN BÓNG -->
+                <section id="danh-sach-san" class="mb-5" data-aos="fade-up">
+                    <!-- Header Section -->
+                    <div class="d-flex justify-content-between align-items-end mb-4">
+                        <div>
+                            <h3 class="fw-bold mb-1">Danh Sách Sân Bóng</h3>
+                            <p class="text-muted small mb-0">Hệ thống sân mini 5, 7 và 11 người hiện đại</p>
                         </div>
-                        <h5 class="fw-bold text-dark mb-1">Sân Cỏ Nhân Tạo A1</h5>
-                        <p class="text-muted small mb-3"><i class="fa-solid fa-location-dot me-1 text-danger"></i> Khu A - Mặt sân mới nâng cấp 2026</p>
-                        
-                        <hr class="my-2 border-light-subtle">
-                        
-                        <ul class="list-unstyled small text-muted mb-3">
-                            <li class="mb-1"><i class="fa-solid fa-circle-check text-success me-2"></i>Hệ thống đèn LED hiện đại</li>
-                            <li class="mb-1"><i class="fa-solid fa-circle-check text-success me-2"></i>Lưới chắn bóng an toàn</li>
-                        </ul>
+                        <span
+                            class="badge bg-white text-dark border px-3 py-2 rounded-pill small fw-semibold shadow-sm">3
+                            Loại Sân</span>
                     </div>
-                    <button class="btn btn-outline-dark btn-sm w-100 fw-bold py-2 mt-2" data-bs-toggle="modal" data-bs-target="#bookingModal">
-                        <i class="fa-regular fa-calendar-check me-1"></i> Đặt Sân A1
-                    </button>
-                </div>
-            </div>
-        </div>
 
-        <!-- Sân B1 (Sân 7) -->
-        <div class="col-md-4">
-            <div class="pitch-card h-100 d-flex flex-column border rounded-3 overflow-hidden shadow-sm">
-                <div class="ratio ratio-16x9">
-                    <img src="https://munichgroup.vn/wp-content/uploads/thi-cong-san-bong-da-mini-9-1.webp" class="pitch-img object-fit-cover" alt="Sân 7 người">
-                </div>
-                <div class="p-3 flex-grow-1 d-flex flex-column justify-content-between">
-                    <div>
-                        <div class="d-flex justify-content-between align-items-center mb-2">
-                            <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-2 py-1">Sân 7 Người</span>
-                            <span class="fw-bold text-primary fs-6">450.000đ <small class="text-muted fw-normal">/h</small></span>
-                        </div>
-                        <h5 class="fw-bold text-dark mb-1">Sân Cỏ Nhân Tạo B1</h5>
-                        <p class="text-muted small mb-3"><i class="fa-solid fa-location-dot me-1 text-danger"></i> Khu B - Kích thước rộng rãi chuẩn thi đấu</p>
-                        
-                        <hr class="my-2 border-light-subtle">
-                        
-                        <ul class="list-unstyled small text-muted mb-3">
-                            <li class="mb-1"><i class="fa-solid fa-circle-check text-success me-2"></i>Khán đài mini cho khán giả</li>
-                            <li class="mb-1"><i class="fa-solid fa-circle-check text-success me-2"></i>Tùy chỉnh ghép sân 11 người</li>
-                        </ul>
-                    </div>
-                    <button class="btn btn-outline-dark btn-sm w-100 fw-bold py-2 mt-2" data-bs-toggle="modal" data-bs-target="#bookingModal">
-                        <i class="fa-regular fa-calendar-check me-1"></i> Đặt Sân B1
-                    </button>
-                </div>
-            </div>
-        </div>
+                    <div class="row g-4">
+                        <!-- Sân A1 (Sân 5) -->
+                        <div class="col-md-4">
+                            <div class="pitch-card h-100 d-flex flex-column border rounded-3 overflow-hidden shadow-sm">
+                                <div class="ratio ratio-16x9">
+                                    <img src="https://munichgroup.vn/wp-content/uploads/thi-cong-san-bong-da-mini-9-1.webp"
+                                        class="pitch-img object-fit-cover" alt="Sân 5 người">
+                                </div>
+                                <div class="p-3 flex-grow-1 d-flex flex-column justify-content-between">
+                                    <div>
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <span
+                                                class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1">Sân
+                                                5 Người</span>
+                                            <span class="fw-bold text-primary fs-6">250.000đ <small
+                                                    class="text-muted fw-normal">/h</small></span>
+                                        </div>
+                                        <h5 class="fw-bold text-dark mb-1">Sân Cỏ Nhân Tạo A1</h5>
+                                        <p class="text-muted small mb-3"><i
+                                                class="fa-solid fa-location-dot me-1 text-danger"></i> Khu A - Mặt sân
+                                            mới nâng cấp 2026</p>
 
-        <!-- Sân C1 (Sân 11) -->
-        <div class="col-md-4">
-            <div class="pitch-card h-100 d-flex flex-column border rounded-3 overflow-hidden shadow-sm">
-                <div class="ratio ratio-16x9">
-                    <img src="https://munichgroup.vn/wp-content/uploads/thi-cong-san-bong-da-mini-9-1.webp" class="pitch-img object-fit-cover" alt="Sân 11 người">
-                </div>
-                <div class="p-3 flex-grow-1 d-flex flex-column justify-content-between">
-                    <div>
-                        <div class="d-flex justify-content-between align-items-center mb-2">
-                            <span class="badge bg-warning-subtle text-warning border border-warning-subtle px-2 py-1">Sân 11 Người</span>
-                            <span class="fw-bold text-primary fs-6">800.000đ <small class="text-muted fw-normal">/h</small></span>
+                                        <hr class="my-2 border-light-subtle">
+
+                                        <ul class="list-unstyled small text-muted mb-3">
+                                            <li class="mb-1"><i
+                                                    class="fa-solid fa-circle-check text-success me-2"></i>Hệ thống đèn
+                                                LED hiện đại</li>
+                                            <li class="mb-1"><i
+                                                    class="fa-solid fa-circle-check text-success me-2"></i>Lưới chắn
+                                                bóng an toàn</li>
+                                        </ul>
+                                    </div>
+                                    <button class="btn btn-outline-dark btn-sm w-100 fw-bold py-2 mt-2"
+                                        data-bs-toggle="modal" data-bs-target="#bookingModal">
+                                        <i class="fa-regular fa-calendar-check me-1"></i> Đặt Sân A1
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                        <h5 class="fw-bold text-dark mb-1">Sân Đại Tiêu Chuẩn C1</h5>
-                        <p class="text-muted small mb-3"><i class="fa-solid fa-location-dot me-1 text-danger"></i> Khu C - Chuyên dành cho giải đấu lớn</p>
-                        
-                        <hr class="my-2 border-light-subtle">
-                        
-                        <ul class="list-unstyled small text-muted mb-3">
-                            <li class="mb-1"><i class="fa-solid fa-circle-check text-success me-2"></i>Phòng thay đồ riêng biệt</li>
-                            <li class="mb-1"><i class="fa-solid fa-circle-check text-success me-2"></i>Có trọng tài chuyên nghiệp</li>
-                        </ul>
+
+                        <!-- Sân B1 (Sân 7) -->
+                        <div class="col-md-4">
+                            <div class="pitch-card h-100 d-flex flex-column border rounded-3 overflow-hidden shadow-sm">
+                                <div class="ratio ratio-16x9">
+                                    <img src="https://munichgroup.vn/wp-content/uploads/thi-cong-san-bong-da-mini-9-1.webp"
+                                        class="pitch-img object-fit-cover" alt="Sân 7 người">
+                                </div>
+                                <div class="p-3 flex-grow-1 d-flex flex-column justify-content-between">
+                                    <div>
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <span
+                                                class="badge bg-primary-subtle text-primary border border-primary-subtle px-2 py-1">Sân
+                                                7 Người</span>
+                                            <span class="fw-bold text-primary fs-6">450.000đ <small
+                                                    class="text-muted fw-normal">/h</small></span>
+                                        </div>
+                                        <h5 class="fw-bold text-dark mb-1">Sân Cỏ Nhân Tạo B1</h5>
+                                        <p class="text-muted small mb-3"><i
+                                                class="fa-solid fa-location-dot me-1 text-danger"></i> Khu B - Kích
+                                            thước rộng rãi chuẩn thi đấu</p>
+
+                                        <hr class="my-2 border-light-subtle">
+
+                                        <ul class="list-unstyled small text-muted mb-3">
+                                            <li class="mb-1"><i
+                                                    class="fa-solid fa-circle-check text-success me-2"></i>Khán đài mini
+                                                cho khán giả</li>
+                                            <li class="mb-1"><i
+                                                    class="fa-solid fa-circle-check text-success me-2"></i>Tùy chỉnh
+                                                ghép sân 11 người</li>
+                                        </ul>
+                                    </div>
+                                    <button class="btn btn-outline-dark btn-sm w-100 fw-bold py-2 mt-2"
+                                        data-bs-toggle="modal" data-bs-target="#bookingModal">
+                                        <i class="fa-regular fa-calendar-check me-1"></i> Đặt Sân B1
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sân C1 (Sân 11) -->
+                        <div class="col-md-4">
+                            <div class="pitch-card h-100 d-flex flex-column border rounded-3 overflow-hidden shadow-sm">
+                                <div class="ratio ratio-16x9">
+                                    <img src="https://munichgroup.vn/wp-content/uploads/thi-cong-san-bong-da-mini-9-1.webp"
+                                        class="pitch-img object-fit-cover" alt="Sân 11 người">
+                                </div>
+                                <div class="p-3 flex-grow-1 d-flex flex-column justify-content-between">
+                                    <div>
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <span
+                                                class="badge bg-warning-subtle text-warning border border-warning-subtle px-2 py-1">Sân
+                                                11 Người</span>
+                                            <span class="fw-bold text-primary fs-6">800.000đ <small
+                                                    class="text-muted fw-normal">/h</small></span>
+                                        </div>
+                                        <h5 class="fw-bold text-dark mb-1">Sân Đại Tiêu Chuẩn C1</h5>
+                                        <p class="text-muted small mb-3"><i
+                                                class="fa-solid fa-location-dot me-1 text-danger"></i> Khu C - Chuyên
+                                            dành cho giải đấu lớn</p>
+
+                                        <hr class="my-2 border-light-subtle">
+
+                                        <ul class="list-unstyled small text-muted mb-3">
+                                            <li class="mb-1"><i
+                                                    class="fa-solid fa-circle-check text-success me-2"></i>Phòng thay đồ
+                                                riêng biệt</li>
+                                            <li class="mb-1"><i
+                                                    class="fa-solid fa-circle-check text-success me-2"></i>Có trọng tài
+                                                chuyên nghiệp</li>
+                                        </ul>
+                                    </div>
+                                    <button class="btn btn-outline-dark btn-sm w-100 fw-bold py-2 mt-2"
+                                        data-bs-toggle="modal" data-bs-target="#bookingModal">
+                                        <i class="fa-regular fa-calendar-check me-1"></i> Đặt Sân C1
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <button class="btn btn-outline-dark btn-sm w-100 fw-bold py-2 mt-2" data-bs-toggle="modal" data-bs-target="#bookingModal">
-                        <i class="fa-regular fa-calendar-check me-1"></i> Đặt Sân C1
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+                </section>
 
                 <!-- 3. THÔNG TIN GIẢI ĐẤU -->
                 <section id="giai-dau" class="mb-4" data-aos="fade-up">
-                    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4 gap-3">
+                    <div
+                        class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4 gap-3">
                         <div>
                             <h3 class="fw-bold mb-1">Các Giải Đấu</h3>
                             <p class="text-muted small mb-0">Cập nhật thông tin các giải phong trào tại sân</p>
@@ -469,33 +546,41 @@
                         <!-- Nav Tabs Giải Đấu -->
                         <ul class="nav nav-pills" id="tournamentTab" role="tablist">
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="upcoming-tab" data-bs-toggle="tab" data-bs-target="#upcoming" type="button" role="tab">Đang & Sắp Diễn Ra</button>
+                                <button class="nav-link active" id="upcoming-tab" data-bs-toggle="tab"
+                                    data-bs-target="#upcoming" type="button" role="tab">Đang & Sắp Diễn Ra</button>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="past-tab" data-bs-toggle="tab" data-bs-target="#past" type="button" role="tab">Đã Tổ Chức</button>
+                                <button class="nav-link" id="past-tab" data-bs-toggle="tab" data-bs-target="#past"
+                                    type="button" role="tab">Đã Tổ Chức</button>
                             </li>
                         </ul>
                     </div>
 
                     <!-- Nội Dung Tab -->
                     <div class="tab-content" id="tournamentTabContent">
-                        
+
                         <!-- TAB: Đang & Sắp diễn ra -->
                         <div class="tab-pane fade show active" id="upcoming" role="tabpanel">
                             <div class="row g-4">
                                 <div class="col-md-6">
                                     <div class="tournament-card d-flex flex-column flex-sm-row">
-                                        <img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTlGiA3ZpSMlOmQhj4yatg86OzFxOJzQgckO-wUN_pk4Yq16Z6-i4rgoVTrsJEsj9ocis3uCrDb7MXk9U4" class="tournament-img style-sm" style="width: 100%; max-width: 200px;" alt="Giải đấu">
+                                        <img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTlGiA3ZpSMlOmQhj4yatg86OzFxOJzQgckO-wUN_pk4Yq16Z6-i4rgoVTrsJEsj9ocis3uCrDb7MXk9U4"
+                                            class="tournament-img style-sm" style="width: 100%; max-width: 200px;"
+                                            alt="Giải đấu">
                                         <div class="p-3 d-flex flex-column justify-content-between">
                                             <div>
                                                 <span class="badge bg-danger mb-2">Đăng ký đến 10/10</span>
                                                 <h6 class="fw-bold mb-1">Bình Minh Open Cup 2026</h6>
-                                                <p class="text-muted small mb-2"><i class="fa-regular fa-clock me-1"></i>Khởi tranh: 15/10/2026</p>
-                                                <p class="text-muted small mb-0">Giải đấu dành cho 16 đội bóng doanh nghiệp khu vực.</p>
+                                                <p class="text-muted small mb-2"><i
+                                                        class="fa-regular fa-clock me-1"></i>Khởi tranh: 15/10/2026</p>
+                                                <p class="text-muted small mb-0">Giải đấu dành cho 16 đội bóng doanh
+                                                    nghiệp khu vực.</p>
                                             </div>
                                             <div class="mt-3">
                                                 <button class="btn btn-lime btn-sm me-2">Đăng Ký Đội</button>
-                                                <a href="#" class="btn btn-link text-decoration-none text-dark btn-sm fw-semibold">Thủ tục <i class="fa-solid fa-arrow-right small"></i></a>
+                                                <a href="#"
+                                                    class="btn btn-link text-decoration-none text-dark btn-sm fw-semibold">Thủ
+                                                    tục <i class="fa-solid fa-arrow-right small"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -503,17 +588,23 @@
 
                                 <div class="col-md-6">
                                     <div class="tournament-card d-flex flex-column flex-sm-row">
-                                        <img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTlGiA3ZpSMlOmQhj4yatg86OzFxOJzQgckO-wUN_pk4Yq16Z6-i4rgoVTrsJEsj9ocis3uCrDb7MXk9U4" class="tournament-img style-sm" style="width: 100%; max-width: 200px;" alt="Giải Sinh Viên">
+                                        <img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTlGiA3ZpSMlOmQhj4yatg86OzFxOJzQgckO-wUN_pk4Yq16Z6-i4rgoVTrsJEsj9ocis3uCrDb7MXk9U4"
+                                            class="tournament-img style-sm" style="width: 100%; max-width: 200px;"
+                                            alt="Giải Sinh Viên">
                                         <div class="p-3 d-flex flex-column justify-content-between">
                                             <div>
                                                 <span class="badge bg-primary mb-2">Giải Sinh Viên</span>
                                                 <h6 class="fw-bold mb-1">Student Champions League</h6>
-                                                <p class="text-muted small mb-2"><i class="fa-regular fa-clock me-1"></i>Khởi tranh: 01/11/2026</p>
-                                                <p class="text-muted small mb-0">Hội tụ các đội bóng sinh viên xuất sắc từ các trường ĐH.</p>
+                                                <p class="text-muted small mb-2"><i
+                                                        class="fa-regular fa-clock me-1"></i>Khởi tranh: 01/11/2026</p>
+                                                <p class="text-muted small mb-0">Hội tụ các đội bóng sinh viên xuất sắc
+                                                    từ các trường ĐH.</p>
                                             </div>
                                             <div class="mt-3">
                                                 <button class="btn btn-lime btn-sm me-2">Đăng Ký Đội</button>
-                                                <a href="#" class="btn btn-link text-decoration-none text-dark btn-sm fw-semibold">Thủ tục <i class="fa-solid fa-arrow-right small"></i></a>
+                                                <a href="#"
+                                                    class="btn btn-link text-decoration-none text-dark btn-sm fw-semibold">Thủ
+                                                    tục <i class="fa-solid fa-arrow-right small"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -526,16 +617,22 @@
                             <div class="row g-4">
                                 <div class="col-md-6">
                                     <div class="tournament-card d-flex flex-column flex-sm-row opacity-75">
-                                        <img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTlGiA3ZpSMlOmQhj4yatg86OzFxOJzQgckO-wUN_pk4Yq16Z6-i4rgoVTrsJEsj9ocis3uCrDb7MXk9U4" class="tournament-img style-sm" style="width: 100%; max-width: 200px;" alt="Giải Mùa Hè">
+                                        <img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTlGiA3ZpSMlOmQhj4yatg86OzFxOJzQgckO-wUN_pk4Yq16Z6-i4rgoVTrsJEsj9ocis3uCrDb7MXk9U4"
+                                            class="tournament-img style-sm" style="width: 100%; max-width: 200px;"
+                                            alt="Giải Mùa Hè">
                                         <div class="p-3 d-flex flex-column justify-content-between">
                                             <div>
                                                 <span class="badge bg-secondary mb-2">Đã Kết Thúc</span>
                                                 <h6 class="fw-bold mb-1">Giải Bóng Đá Mùa Hè 2025</h6>
-                                                <p class="text-muted small mb-2"><i class="fa-solid fa-trophy me-1 text-warning"></i>Vô địch: FC FC Fast & Furious</p>
-                                                <p class="text-muted small mb-0">Giải diễn ra thành công tốt đẹp với 24 trận đấu hấp dẫn.</p>
+                                                <p class="text-muted small mb-2"><i
+                                                        class="fa-solid fa-trophy me-1 text-warning"></i>Vô địch: FC FC
+                                                    Fast & Furious</p>
+                                                <p class="text-muted small mb-0">Giải diễn ra thành công tốt đẹp với 24
+                                                    trận đấu hấp dẫn.</p>
                                             </div>
                                             <div class="mt-3">
-                                                <a href="#" class="btn btn-outline-secondary btn-sm">Xem Kết Quả & Ảnh</a>
+                                                <a href="#" class="btn btn-outline-secondary btn-sm">Xem Kết Quả &
+                                                    Ảnh</a>
                                             </div>
                                         </div>
                                     </div>
@@ -550,68 +647,81 @@
 
             <!-- Footer Minimal -->
             <footer class="footer-minimal bg-light text-dark py-5 border-top">
-    <div class="container">
-        <div class="row g-4 justify-content-between">
-            <!-- Cột 1: Thông tin Thương hiệu & Giới thiệu -->
-            <div class="col-lg-4 col-md-6">
-                <div class="brand-logo brand-font fs-3 fw-bold mb-2">
-                    PITCH<span class="text-primary">247</span>
-                </div>
-                <p class="text-muted small mb-3 lh-base" style="max-width: 360px;">
-                    Trải nghiệm đặt sân bóng phong cách mới. Nhanh chóng, chính xác và minh bạch theo thời gian thực.
-                </p>
-                <!-- Bổ sung Hotline & Địa chỉ trực quan -->
-                <div class="d-flex flex-column gap-2 small text-muted">
-                    <div><i class="fa-solid fa-phone me-2 text-primary"></i>Hotline: <a href="tel:0901234567" class="text-dark fw-semibold text-decoration-none">0901 234 567</a></div>
-                    <div><i class="fa-solid fa-location-dot me-2 text-danger"></i>Hà Nội, Việt Nam</div>
-                </div>
-            </div>
+                <div class="container">
+                    <div class="row g-4 justify-content-between">
+                        <!-- Cột 1: Thông tin Thương hiệu & Giới thiệu -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="brand-logo brand-font fs-3 fw-bold mb-2">
+                                PITCH<span class="text-primary">247</span>
+                            </div>
+                            <p class="text-muted small mb-3 lh-base" style="max-width: 360px;">
+                                Trải nghiệm đặt sân bóng phong cách mới. Nhanh chóng, chính xác và minh bạch theo thời
+                                gian thực.
+                            </p>
+                            <!-- Bổ sung Hotline & Địa chỉ trực quan -->
+                            <div class="d-flex flex-column gap-2 small text-muted">
+                                <div><i class="fa-solid fa-phone me-2 text-primary"></i>Hotline: <a
+                                        href="tel:0901234567" class="text-dark fw-semibold text-decoration-none">0901
+                                        234 567</a></div>
+                                <div><i class="fa-solid fa-location-dot me-2 text-danger"></i>Hà Nội, Việt Nam</div>
+                            </div>
+                        </div>
 
-            <!-- Cột 2: Điều hướng Liên kết -->
-            <div class="col-lg-3 col-6">
-                <div class="text-dark fw-bold mb-3 small text-uppercase tracking-wider">Danh Mục Sân</div>
-                <ul class="list-unstyled small mb-0 d-flex flex-column gap-2">
-                    <li><a href="#danh-sach-san" class="text-muted text-decoration-none hover-primary"><i class="fa-solid fa-angle-right me-1 small"></i>Sân 5 người</a></li>
-                    <li><a href="#danh-sach-san" class="text-muted text-decoration-none hover-primary"><i class="fa-solid fa-angle-right me-1 small"></i>Sân 7 người</a></li>
-                    <li><a href="#danh-sach-san" class="text-muted text-decoration-none hover-primary"><i class="fa-solid fa-angle-right me-1 small"></i>Sân 11 người</a></li>
-                    <li><a href="/bookings" class="text-muted text-decoration-none hover-primary"><i class="fa-solid fa-angle-right me-1 small"></i>Tra cứu đơn đặt</a></li>
-                </ul>
-            </div>
+                        <!-- Cột 2: Điều hướng Liên kết -->
+                        <div class="col-lg-3 col-6">
+                            <div class="text-dark fw-bold mb-3 small text-uppercase tracking-wider">Danh Mục Sân</div>
+                            <ul class="list-unstyled small mb-0 d-flex flex-column gap-2">
+                                <li><a href="#danh-sach-san" class="text-muted text-decoration-none hover-primary"><i
+                                            class="fa-solid fa-angle-right me-1 small"></i>Sân 5 người</a></li>
+                                <li><a href="#danh-sach-san" class="text-muted text-decoration-none hover-primary"><i
+                                            class="fa-solid fa-angle-right me-1 small"></i>Sân 7 người</a></li>
+                                <li><a href="#danh-sach-san" class="text-muted text-decoration-none hover-primary"><i
+                                            class="fa-solid fa-angle-right me-1 small"></i>Sân 11 người</a></li>
+                                <li><a href="/bookings" class="text-muted text-decoration-none hover-primary"><i
+                                            class="fa-solid fa-angle-right me-1 small"></i>Tra cứu đơn đặt</a></li>
+                            </ul>
+                        </div>
 
-            <!-- Cột 3: Mạng xã hội & Nút bấm kết nối -->
-            <div class="col-lg-4 col-md-6">
-                <div class="text-dark fw-bold mb-3 small text-uppercase tracking-wider">Kết Nối Với Chúng Tôi</div>
-                <p class="text-muted small mb-3">Theo dõi các kênh truyền thông để nhận ưu đãi đặt sân mới nhất.</p>
-                
-                <!-- Bố cục nút Social hoàn chỉnh -->
-                <div class="d-flex flex-wrap gap-2">
-                    <a href="#" class="btn btn-sm btn-outline-primary d-inline-flex align-items-center gap-2 rounded-pill px-3">
-                        <i class="fa-brands fa-facebook-f"></i>
-                        <span>Facebook</span>
-                    </a>
-                    <a href="#" class="btn btn-sm btn-outline-dark d-inline-flex align-items-center gap-2 rounded-pill px-3">
-                        <i class="fa-brands fa-tiktok"></i>
-                        <span>TikTok</span>
-                    </a>
-                    <a href="#" class="btn btn-sm btn-outline-info d-inline-flex align-items-center gap-2 rounded-pill px-3">
-                        <i class="fa-solid fa-comment-dots"></i>
-                        <span>Zalo OA</span>
-                    </a>
+                        <!-- Cột 3: Mạng xã hội & Nút bấm kết nối -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="text-dark fw-bold mb-3 small text-uppercase tracking-wider">Kết Nối Với Chúng
+                                Tôi</div>
+                            <p class="text-muted small mb-3">Theo dõi các kênh truyền thông để nhận ưu đãi đặt sân mới
+                                nhất.</p>
+
+                            <!-- Bố cục nút Social hoàn chỉnh -->
+                            <div class="d-flex flex-wrap gap-2">
+                                <a href="#"
+                                    class="btn btn-sm btn-outline-primary d-inline-flex align-items-center gap-2 rounded-pill px-3">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                    <span>Facebook</span>
+                                </a>
+                                <a href="#"
+                                    class="btn btn-sm btn-outline-dark d-inline-flex align-items-center gap-2 rounded-pill px-3">
+                                    <i class="fa-brands fa-tiktok"></i>
+                                    <span>TikTok</span>
+                                </a>
+                                <a href="#"
+                                    class="btn btn-sm btn-outline-info d-inline-flex align-items-center gap-2 rounded-pill px-3">
+                                    <i class="fa-solid fa-comment-dots"></i>
+                                    <span>Zalo OA</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Thanh Copyright dưới cùng -->
+                    <div
+                        class="border-top mt-5 pt-3 d-flex flex-column flex-md-row justify-content-between align-items-center text-muted small gap-2">
+                        <div>&copy; 2026 <strong>PITCH247</strong>. Tất cả quyền được bảo lưu.</div>
+                        <div class="d-flex gap-3">
+                            <a href="#" class="text-muted text-decoration-none">Điều khoản sử dụng</a>
+                            <span>•</span>
+                            <a href="#" class="text-muted text-decoration-none">Chính sách bảo mật</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <!-- Thanh Copyright dưới cùng -->
-        <div class="border-top mt-5 pt-3 d-flex flex-column flex-md-row justify-content-between align-items-center text-muted small gap-2">
-            <div>&copy; 2026 <strong>PITCH247</strong>. Tất cả quyền được bảo lưu.</div>
-            <div class="d-flex gap-3">
-                <a href="#" class="text-muted text-decoration-none">Điều khoản sử dụng</a>
-                <span>•</span>
-                <a href="#" class="text-muted text-decoration-none">Chính sách bảo mật</a>
-            </div>
-        </div>
-    </div>
-</footer>
+            </footer>
 
         </div>
     </div>
@@ -629,16 +739,21 @@
                 <form id="bookingForm" onsubmit="handleBookingSubmit(event)">
                     <div class="modal-body p-4">
                         <div class="mb-3">
-                            <label for="customerName" class="form-label fw-semibold small">Họ và Tên <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="customerName" placeholder="Nhập họ và tên người đặt" required>
+                            <label for="customerName" class="form-label fw-semibold small">Họ và Tên <span
+                                    class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="customerName"
+                                placeholder="Nhập họ và tên người đặt" required>
                         </div>
                         <div class="mb-3">
-                            <label for="customerPhone" class="form-label fw-semibold small">Số Điện Thoại <span class="text-danger">*</span></label>
-                            <input type="tel" class="form-control" id="customerPhone" placeholder="VD: 0987654321" pattern="[0-9]{10}" required>
+                            <label for="customerPhone" class="form-label fw-semibold small">Số Điện Thoại <span
+                                    class="text-danger">*</span></label>
+                            <input type="tel" class="form-control" id="customerPhone" placeholder="VD: 0987654321"
+                                pattern="[0-9]{10}" required>
                         </div>
                         <div class="row g-3 mb-3">
                             <div class="col-md-6">
-                                <label for="pitchType" class="form-label fw-semibold small">Loại Sân <span class="text-danger">*</span></label>
+                                <label for="pitchType" class="form-label fw-semibold small">Loại Sân <span
+                                        class="text-danger">*</span></label>
                                 <select class="form-select" id="pitchType" required>
                                     <option value="" selected disabled>Chọn sân...</option>
                                     <option value="5">Sân 5 Người</option>
@@ -647,12 +762,14 @@
                                 </select>
                             </div>
                             <div class="col-md-6">
-                                <label for="bookingDate" class="form-label fw-semibold small">Ngày Đá <span class="text-danger">*</span></label>
+                                <label for="bookingDate" class="form-label fw-semibold small">Ngày Đá <span
+                                        class="text-danger">*</span></label>
                                 <input type="date" class="form-control" id="bookingDate" required>
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="bookingTime" class="form-label fw-semibold small">Khung Giờ <span class="text-danger">*</span></label>
+                            <label for="bookingTime" class="form-label fw-semibold small">Khung Giờ <span
+                                    class="text-danger">*</span></label>
                             <select class="form-select" id="bookingTime" required>
                                 <option value="" selected disabled>Chọn khung giờ...</option>
                                 <option value="16:00-17:30">16:00 - 17:30</option>
@@ -663,11 +780,13 @@
                         </div>
                         <div class="mb-3">
                             <label for="bookingNotes" class="form-label fw-semibold small">Ghi Chú Yêu Cầu</label>
-                            <textarea class="form-control" id="bookingNotes" rows="2" placeholder="Ví dụ: Cần mượn thêm áo lưới, bóng thi đấu..."></textarea>
+                            <textarea class="form-control" id="bookingNotes" rows="2"
+                                placeholder="Ví dụ: Cần mượn thêm áo lưới, bóng thi đấu..."></textarea>
                         </div>
                     </div>
                     <div class="modal-footer bg-light">
-                        <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Hủy Bỏ</button>
+                        <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Hủy
+                            Bỏ</button>
                         <button type="submit" class="btn btn-lime btn-sm">Xác Nhận Đặt Sân</button>
                     </div>
                 </form>
@@ -691,7 +810,7 @@
         // Xử lý gửi Form Đặt Sân
         function handleBookingSubmit(event) {
             event.preventDefault();
-            
+
             const name = document.getElementById('customerName').value;
             const phone = document.getElementById('customerPhone').value;
             const pitch = document.getElementById('pitchType').value;
@@ -710,4 +829,5 @@
         }
     </script>
 </body>
+
 </html>
