@@ -289,7 +289,7 @@
                     <a class="side-nav-link active" href="/">
                         <i class="fa-solid fa-house"></i> Trang Chủ
                     </a>
-                    <a class="side-nav-link" href="#danh-sach-san">
+                    <a class="side-nav-link" href="list.html">
                         <i class="fa-solid fa-futbol"></i> Danh Sách Sân
                     </a>
                     <a class="side-nav-link" href="#giai-dau">
@@ -399,139 +399,21 @@
                     </div>
                 </section>
 
-                <!-- 2. DANH SÁCH SÂN BÓNG -->
+                <!-- 2. DANH SÁCH SÂN BÓNG (Banner dẫn sang trang list.html) -->
                 <section id="danh-sach-san" class="mb-5" data-aos="fade-up">
-                    <!-- Header Section -->
-                    <div class="d-flex justify-content-between align-items-end mb-4">
-                        <div>
-                            <h3 class="fw-bold mb-1">Danh Sách Sân Bóng</h3>
-                            <p class="text-muted small mb-0">Hệ thống sân mini 5, 7 và 11 người hiện đại</p>
+                    <div class="p-4 p-md-5 rounded-4 shadow-sm d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-4"
+                        style="background: linear-gradient(135deg, var(--text-main) 0%, #1e293b 100%);">
+                        <div class="text-white">
+                            <span class="badge bg-success mb-2">3 Loại Sân Đang Hoạt Động</span>
+                            <h3 class="fw-bold mb-2 text-white">Danh Sách Sân Bóng</h3>
+                            <p class="text-white-50 mb-0" style="max-width: 480px;">
+                                Xem đầy đủ thông tin sân 5, 7, 11 người: loại cỏ, không gian, giá theo khung giờ và
+                                trạng thái sẵn sàng — kèm bộ lọc thông minh để tìm sân phù hợp nhanh nhất.
+                            </p>
                         </div>
-                        <span
-                            class="badge bg-white text-dark border px-3 py-2 rounded-pill small fw-semibold shadow-sm">3
-                            Loại Sân</span>
-                    </div>
-
-                    <div class="row g-4">
-                        <!-- Sân A1 (Sân 5) -->
-                        <div class="col-md-4">
-                            <div class="pitch-card h-100 d-flex flex-column border rounded-3 overflow-hidden shadow-sm">
-                                <div class="ratio ratio-16x9">
-                                    <img src="https://munichgroup.vn/wp-content/uploads/thi-cong-san-bong-da-mini-9-1.webp"
-                                        class="pitch-img object-fit-cover" alt="Sân 5 người">
-                                </div>
-                                <div class="p-3 flex-grow-1 d-flex flex-column justify-content-between">
-                                    <div>
-                                        <div class="d-flex justify-content-between align-items-center mb-2">
-                                            <span
-                                                class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1">Sân
-                                                5 Người</span>
-                                            <span class="fw-bold text-primary fs-6">250.000đ <small
-                                                    class="text-muted fw-normal">/h</small></span>
-                                        </div>
-                                        <h5 class="fw-bold text-dark mb-1">Sân Cỏ Nhân Tạo A1</h5>
-                                        <p class="text-muted small mb-3"><i
-                                                class="fa-solid fa-location-dot me-1 text-danger"></i> Khu A - Mặt sân
-                                            mới nâng cấp 2026</p>
-
-                                        <hr class="my-2 border-light-subtle">
-
-                                        <ul class="list-unstyled small text-muted mb-3">
-                                            <li class="mb-1"><i
-                                                    class="fa-solid fa-circle-check text-success me-2"></i>Hệ thống đèn
-                                                LED hiện đại</li>
-                                            <li class="mb-1"><i
-                                                    class="fa-solid fa-circle-check text-success me-2"></i>Lưới chắn
-                                                bóng an toàn</li>
-                                        </ul>
-                                    </div>
-                                    <button class="btn btn-outline-dark btn-sm w-100 fw-bold py-2 mt-2"
-                                        data-bs-toggle="modal" data-bs-target="#bookingModal">
-                                        <i class="fa-regular fa-calendar-check me-1"></i> Đặt Sân A1
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Sân B1 (Sân 7) -->
-                        <div class="col-md-4">
-                            <div class="pitch-card h-100 d-flex flex-column border rounded-3 overflow-hidden shadow-sm">
-                                <div class="ratio ratio-16x9">
-                                    <img src="https://munichgroup.vn/wp-content/uploads/thi-cong-san-bong-da-mini-9-1.webp"
-                                        class="pitch-img object-fit-cover" alt="Sân 7 người">
-                                </div>
-                                <div class="p-3 flex-grow-1 d-flex flex-column justify-content-between">
-                                    <div>
-                                        <div class="d-flex justify-content-between align-items-center mb-2">
-                                            <span
-                                                class="badge bg-primary-subtle text-primary border border-primary-subtle px-2 py-1">Sân
-                                                7 Người</span>
-                                            <span class="fw-bold text-primary fs-6">450.000đ <small
-                                                    class="text-muted fw-normal">/h</small></span>
-                                        </div>
-                                        <h5 class="fw-bold text-dark mb-1">Sân Cỏ Nhân Tạo B1</h5>
-                                        <p class="text-muted small mb-3"><i
-                                                class="fa-solid fa-location-dot me-1 text-danger"></i> Khu B - Kích
-                                            thước rộng rãi chuẩn thi đấu</p>
-
-                                        <hr class="my-2 border-light-subtle">
-
-                                        <ul class="list-unstyled small text-muted mb-3">
-                                            <li class="mb-1"><i
-                                                    class="fa-solid fa-circle-check text-success me-2"></i>Khán đài mini
-                                                cho khán giả</li>
-                                            <li class="mb-1"><i
-                                                    class="fa-solid fa-circle-check text-success me-2"></i>Tùy chỉnh
-                                                ghép sân 11 người</li>
-                                        </ul>
-                                    </div>
-                                    <button class="btn btn-outline-dark btn-sm w-100 fw-bold py-2 mt-2"
-                                        data-bs-toggle="modal" data-bs-target="#bookingModal">
-                                        <i class="fa-regular fa-calendar-check me-1"></i> Đặt Sân B1
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Sân C1 (Sân 11) -->
-                        <div class="col-md-4">
-                            <div class="pitch-card h-100 d-flex flex-column border rounded-3 overflow-hidden shadow-sm">
-                                <div class="ratio ratio-16x9">
-                                    <img src="https://munichgroup.vn/wp-content/uploads/thi-cong-san-bong-da-mini-9-1.webp"
-                                        class="pitch-img object-fit-cover" alt="Sân 11 người">
-                                </div>
-                                <div class="p-3 flex-grow-1 d-flex flex-column justify-content-between">
-                                    <div>
-                                        <div class="d-flex justify-content-between align-items-center mb-2">
-                                            <span
-                                                class="badge bg-warning-subtle text-warning border border-warning-subtle px-2 py-1">Sân
-                                                11 Người</span>
-                                            <span class="fw-bold text-primary fs-6">800.000đ <small
-                                                    class="text-muted fw-normal">/h</small></span>
-                                        </div>
-                                        <h5 class="fw-bold text-dark mb-1">Sân Đại Tiêu Chuẩn C1</h5>
-                                        <p class="text-muted small mb-3"><i
-                                                class="fa-solid fa-location-dot me-1 text-danger"></i> Khu C - Chuyên
-                                            dành cho giải đấu lớn</p>
-
-                                        <hr class="my-2 border-light-subtle">
-
-                                        <ul class="list-unstyled small text-muted mb-3">
-                                            <li class="mb-1"><i
-                                                    class="fa-solid fa-circle-check text-success me-2"></i>Phòng thay đồ
-                                                riêng biệt</li>
-                                            <li class="mb-1"><i
-                                                    class="fa-solid fa-circle-check text-success me-2"></i>Có trọng tài
-                                                chuyên nghiệp</li>
-                                        </ul>
-                                    </div>
-                                    <button class="btn btn-outline-dark btn-sm w-100 fw-bold py-2 mt-2"
-                                        data-bs-toggle="modal" data-bs-target="#bookingModal">
-                                        <i class="fa-regular fa-calendar-check me-1"></i> Đặt Sân C1
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+                        <a href="list.html" class="btn btn-lime fw-bold flex-shrink-0 px-4 py-3">
+                            <i class="fa-solid fa-futbol me-2"></i>Xem Toàn Bộ Danh Sách Sân
+                        </a>
                     </div>
                 </section>
 
