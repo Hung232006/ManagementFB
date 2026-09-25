@@ -295,7 +295,7 @@
                     <a class="side-nav-link" href="#giai-dau">
                         <i class="fa-solid fa-trophy"></i> Giải Đấu
                     </a>
-                    <a class="side-nav-link" href="/bookings">
+                    <a class="side-nav-link" href="bookings.html">
                         <i class="fa-solid fa-ticket"></i> Tra Cứu Đơn
                     </a>
                 </nav>
@@ -329,7 +329,7 @@
 
                 <!-- Quick Action/Search Bar -->
                 <div class="d-flex align-items-center gap-3">
-                    <a href="/bookings" class="btn btn-outline-dark btn-sm font-monospace">
+                    <a href="bookings.html" class="btn btn-outline-dark btn-sm font-monospace">
                         <i class="fa-solid fa-magnifying-glass me-1"></i> Kiểm Tra Đặt Sân
                     </a>
                     <button class="btn btn-lime btn-sm d-none d-sm-inline-block" data-bs-toggle="modal"
@@ -417,111 +417,21 @@
                     </div>
                 </section>
 
-                <!-- 3. THÔNG TIN GIẢI ĐẤU -->
+                <!-- 3. THÔNG TIN GIẢI ĐẤU (Banner dẫn sang trang tournaments.html) -->
                 <section id="giai-dau" class="mb-4" data-aos="fade-up">
-                    <div
-                        class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4 gap-3">
+                    <div class="p-4 p-md-5 rounded-4 shadow-sm border d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-4"
+                        style="background: #ffffff;">
                         <div>
-                            <h3 class="fw-bold mb-1">Các Giải Đấu</h3>
-                            <p class="text-muted small mb-0">Cập nhật thông tin các giải phong trào tại sân</p>
+                            <span class="badge bg-danger mb-2">2 Giải Đang Mở Đăng Ký</span>
+                            <h3 class="fw-bold mb-2">Các Giải Đấu</h3>
+                            <p class="text-muted mb-0" style="max-width: 480px;">
+                                Cúp Bóng Đá Tứ Hùng Mùa Xuân 2026, Student Champions League và các giải phong trào
+                                khác — xem lịch thi đấu, bảng xếp hạng, vua phá lưới và đăng ký đội tham gia.
+                            </p>
                         </div>
-                        <!-- Nav Tabs Giải Đấu -->
-                        <ul class="nav nav-pills" id="tournamentTab" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="upcoming-tab" data-bs-toggle="tab"
-                                    data-bs-target="#upcoming" type="button" role="tab">Đang & Sắp Diễn Ra</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="past-tab" data-bs-toggle="tab" data-bs-target="#past"
-                                    type="button" role="tab">Đã Tổ Chức</button>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Nội Dung Tab -->
-                    <div class="tab-content" id="tournamentTabContent">
-
-                        <!-- TAB: Đang & Sắp diễn ra -->
-                        <div class="tab-pane fade show active" id="upcoming" role="tabpanel">
-                            <div class="row g-4">
-                                <div class="col-md-6">
-                                    <div class="tournament-card d-flex flex-column flex-sm-row">
-                                        <img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTlGiA3ZpSMlOmQhj4yatg86OzFxOJzQgckO-wUN_pk4Yq16Z6-i4rgoVTrsJEsj9ocis3uCrDb7MXk9U4"
-                                            class="tournament-img style-sm" style="width: 100%; max-width: 200px;"
-                                            alt="Giải đấu">
-                                        <div class="p-3 d-flex flex-column justify-content-between">
-                                            <div>
-                                                <span class="badge bg-danger mb-2">Đăng ký đến 10/10</span>
-                                                <h6 class="fw-bold mb-1">Bình Minh Open Cup 2026</h6>
-                                                <p class="text-muted small mb-2"><i
-                                                        class="fa-regular fa-clock me-1"></i>Khởi tranh: 15/10/2026</p>
-                                                <p class="text-muted small mb-0">Giải đấu dành cho 16 đội bóng doanh
-                                                    nghiệp khu vực.</p>
-                                            </div>
-                                            <div class="mt-3">
-                                                <button class="btn btn-lime btn-sm me-2">Đăng Ký Đội</button>
-                                                <a href="#"
-                                                    class="btn btn-link text-decoration-none text-dark btn-sm fw-semibold">Thủ
-                                                    tục <i class="fa-solid fa-arrow-right small"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <div class="tournament-card d-flex flex-column flex-sm-row">
-                                        <img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTlGiA3ZpSMlOmQhj4yatg86OzFxOJzQgckO-wUN_pk4Yq16Z6-i4rgoVTrsJEsj9ocis3uCrDb7MXk9U4"
-                                            class="tournament-img style-sm" style="width: 100%; max-width: 200px;"
-                                            alt="Giải Sinh Viên">
-                                        <div class="p-3 d-flex flex-column justify-content-between">
-                                            <div>
-                                                <span class="badge bg-primary mb-2">Giải Sinh Viên</span>
-                                                <h6 class="fw-bold mb-1">Student Champions League</h6>
-                                                <p class="text-muted small mb-2"><i
-                                                        class="fa-regular fa-clock me-1"></i>Khởi tranh: 01/11/2026</p>
-                                                <p class="text-muted small mb-0">Hội tụ các đội bóng sinh viên xuất sắc
-                                                    từ các trường ĐH.</p>
-                                            </div>
-                                            <div class="mt-3">
-                                                <button class="btn btn-lime btn-sm me-2">Đăng Ký Đội</button>
-                                                <a href="#"
-                                                    class="btn btn-link text-decoration-none text-dark btn-sm fw-semibold">Thủ
-                                                    tục <i class="fa-solid fa-arrow-right small"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- TAB: Đã tổ chức -->
-                        <div class="tab-pane fade" id="past" role="tabpanel">
-                            <div class="row g-4">
-                                <div class="col-md-6">
-                                    <div class="tournament-card d-flex flex-column flex-sm-row opacity-75">
-                                        <img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTlGiA3ZpSMlOmQhj4yatg86OzFxOJzQgckO-wUN_pk4Yq16Z6-i4rgoVTrsJEsj9ocis3uCrDb7MXk9U4"
-                                            class="tournament-img style-sm" style="width: 100%; max-width: 200px;"
-                                            alt="Giải Mùa Hè">
-                                        <div class="p-3 d-flex flex-column justify-content-between">
-                                            <div>
-                                                <span class="badge bg-secondary mb-2">Đã Kết Thúc</span>
-                                                <h6 class="fw-bold mb-1">Giải Bóng Đá Mùa Hè 2025</h6>
-                                                <p class="text-muted small mb-2"><i
-                                                        class="fa-solid fa-trophy me-1 text-warning"></i>Vô địch: FC FC
-                                                    Fast & Furious</p>
-                                                <p class="text-muted small mb-0">Giải diễn ra thành công tốt đẹp với 24
-                                                    trận đấu hấp dẫn.</p>
-                                            </div>
-                                            <div class="mt-3">
-                                                <a href="#" class="btn btn-outline-secondary btn-sm">Xem Kết Quả &
-                                                    Ảnh</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+                        <a href="tournaments.html" class="btn btn-lime fw-bold flex-shrink-0 px-4 py-3">
+                            <i class="fa-solid fa-trophy me-2"></i>Xem Tất Cả Giải Đấu
+                        </a>
                     </div>
                 </section>
 
@@ -559,7 +469,7 @@
                                             class="fa-solid fa-angle-right me-1 small"></i>Sân 7 người</a></li>
                                 <li><a href="#danh-sach-san" class="text-muted text-decoration-none hover-primary"><i
                                             class="fa-solid fa-angle-right me-1 small"></i>Sân 11 người</a></li>
-                                <li><a href="/bookings" class="text-muted text-decoration-none hover-primary"><i
+                                <li><a href="bookings.html" class="text-muted text-decoration-none hover-primary"><i
                                             class="fa-solid fa-angle-right me-1 small"></i>Tra cứu đơn đặt</a></li>
                             </ul>
                         </div>
